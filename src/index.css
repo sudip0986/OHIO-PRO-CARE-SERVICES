@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-condensed: "Bebas Neue", Impact, sans-serif;
+  --font-serif-italic: "Playfair Display", Georgia, serif;
+  --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-brand-dark: #262626;
+  --color-brand-darker: #1d1d1d;
+  --color-brand-charcoal: #474747;
+  --color-brand-green: #18ff35;
+  --color-brand-orange: #d95c2b;
+  --color-brand-orange-hover: #c14d20;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-condensed {
+  font-family: var(--font-condensed);
+  letter-spacing: 0.04em;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+}
+
+.neon-diamond-border {
+  filter: drop-shadow(0px 0px 5px rgba(24, 255, 53, 0.65));
+}
