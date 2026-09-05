@@ -1,6 +1,6 @@
 import React from 'react';
-import { KingsLogo } from './KingsLogo';
-import { MapPin, Globe, Mail, Phone } from 'lucide-react';
+import { OhioProLogo } from './OhioProLogo';
+import { MapPin, Globe, Mail, Phone, Clock, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   onOpenBooking: () => void;
@@ -14,45 +14,46 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenTerms
 }) => {
   return (
-    <footer className="bg-[#262626] text-white pt-16 pb-12 mt-12" id="site-footer">
+    <footer className="bg-[#101010] text-white pt-16 pb-12 mt-12 border-t border-neutral-800" id="site-footer">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
         
         {/* Col 1: Logo & Company Description */}
         <div className="md:col-span-5 flex flex-col items-start space-y-6">
-          <KingsLogo size="md" />
+          <OhioProLogo size="md" />
 
           <div className="text-xs text-neutral-300 space-y-3 leading-relaxed">
-            <h4 className="font-extrabold text-white text-xs tracking-wider uppercase">
-              KINGS APPLIANCE SERVICE
+            <h4 className="font-extrabold text-[#FFD000] text-sm tracking-wider uppercase">
+              OHIO PRO CARE SERVICES
             </h4>
             <p>
-              Your one-stop shop for innovative solutions to appliance repairs + installations. Our family-owned business, established in 2020, catered to Colorado for the past 5 years, but starting this May, our headquarters will now be located in Sturgeon Bay, Wisconsin; where you'll find local, award-winning service throughout the Door County Area.
+              Your trusted Ohio partner for innovative, dependable solutions in appliance repair, maintenance, installation, and home care. Proudly serving Central and Greater Ohio with certified, background-checked technicians and upfront pricing.
             </p>
             <p>
-              Every service is backed by our customer satisfaction guarantee, so you won't find any hidden fees here! You'll only be charged a $79.95 service fee, which includes an estimate. Our team of experts are ready to tackle any repair or installation challenge, no matter the make or model, so let The Kings do the heavy-lifting, + bring it back to life!
+              Every service visit is protected by our transparent $79.95 flat diagnostic fee and a comprehensive 90-day warranty on all replacement parts and labor. Let Ohio Pro Care Services do the heavy lifting to keep your household running at peak efficiency!
             </p>
           </div>
         </div>
 
-        {/* Col 2: Quick Links */}
+        {/* Col 2: Quick Links & Yellow Hyperlinks */}
         <div className="md:col-span-3 flex flex-col space-y-4">
-          <h4 className="font-bold text-sm tracking-wider uppercase text-white">
+          <h4 className="font-bold text-sm tracking-wider uppercase text-white border-b border-neutral-800 pb-2">
             QUICK LINKS
           </h4>
-          <ul className="text-xs space-y-2.5 font-bold tracking-wider text-neutral-300">
+          <ul className="text-xs space-y-3 font-bold tracking-wider">
             <li>
               <button
                 onClick={onOpenBooking}
-                className="hover:text-[#18ff35] transition-colors uppercase text-left cursor-pointer"
+                className="link-yellow transition-colors uppercase text-left cursor-pointer flex items-center gap-1.5"
                 id="footer-link-booking"
               >
-                BOOKING FORM
+                <span>ONLINE BOOKING</span>
+                <ArrowRight className="w-3 h-3 text-[#FFD000]" />
               </button>
             </li>
             <li>
               <button
                 onClick={onOpenPrivacy}
-                className="hover:text-[#18ff35] transition-colors uppercase text-left cursor-pointer"
+                className="text-neutral-300 hover:text-[#FFD000] transition-colors uppercase text-left cursor-pointer"
                 id="footer-link-privacy"
               >
                 PRIVACY POLICY
@@ -61,62 +62,73 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={onOpenTerms}
-                className="hover:text-[#18ff35] transition-colors uppercase text-left cursor-pointer"
+                className="text-neutral-300 hover:text-[#FFD000] transition-colors uppercase text-left cursor-pointer"
                 id="footer-link-terms"
               >
-                TERMS OF USE
+                TERMS OF SERVICE
               </button>
             </li>
           </ul>
+
+          <div className="pt-4">
+            <button
+              onClick={onOpenBooking}
+              className="btn-yellow w-full py-2.5 text-xs font-black tracking-wider uppercase rounded-lg shadow-md cursor-pointer"
+              id="footer-cta-book"
+            >
+              BOOK SERVICE ONLINE
+            </button>
+          </div>
         </div>
 
         {/* Col 3: Contact Info & Hours */}
         <div className="md:col-span-4 flex flex-col space-y-3 text-xs">
-          <h4 className="font-bold text-sm tracking-wider uppercase text-white">
-            CONTACT US:
+          <h4 className="font-bold text-sm tracking-wider uppercase text-white border-b border-neutral-800 pb-2">
+            CONNECT WITH US:
           </h4>
           <div className="space-y-1">
-            <p className="font-extrabold uppercase text-white">OUR HEADQUARTERS:</p>
-            <p className="text-neutral-300">1031 WEST SPRUCE DRIVE</p>
-            <p className="text-neutral-300">STURGEON BAY, WI 54235</p>
+            <p className="font-extrabold uppercase text-[#FFD000]">CENTRAL OHIO DISPATCH:</p>
+            <p className="text-neutral-300">Greater Columbus &amp; Regional Service Hubs</p>
+            <p className="text-neutral-400">Serving Columbus, Cleveland, Cincinnati &amp; Statewide</p>
           </div>
 
-          <div className="pt-2 space-y-2 text-neutral-300">
+          <div className="pt-2 space-y-2.5 text-neutral-300">
             <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
+              <Mail className="w-4 h-4 text-[#FFD000] shrink-0" />
               <a
-                href="mailto:Kingsapplianceservice@gmail.com"
-                className="hover:text-white transition-colors"
+                href="mailto:contact@ohioprocareservices.com"
+                className="hover:text-[#FFD000] transition-colors"
                 id="footer-email"
               >
-                Kingsapplianceservice@gmail.com
+                contact@ohioprocareservices.com
               </a>
             </p>
 
             <p className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-neutral-400 shrink-0" />
+              <Phone className="w-4 h-4 text-[#FFD000] shrink-0" />
               <a
-                href="tel:9208395515"
-                className="hover:text-white transition-colors font-semibold"
+                href="tel:6148882273"
+                className="hover:text-[#FFD000] transition-colors font-bold text-sm text-[#FFD000]"
                 id="footer-phone"
               >
-                920-839-5515
+                (614) 888-CARE (2273)
               </a>
             </p>
 
-            <p className="text-neutral-400 pt-1">
-              Hours: Mon-Fri 8:00AM - 5:00PM
+            <p className="flex items-center gap-2 text-neutral-400 pt-1">
+              <Clock className="w-4 h-4 text-[#FFD000] shrink-0" />
+              <span>Mon - Fri: 8:00 AM - 6:00 PM | Sat: 9:00 AM - 2:00 PM</span>
             </p>
           </div>
 
-          {/* Social Icons in Footer */}
+          {/* Social Icons in Footer with Yellow Hover */}
           <div className="flex items-center space-x-2 pt-3">
             {/* Facebook */}
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Facebook"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -129,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -142,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="LinkedIn"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -152,30 +164,19 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Map */}
             <a
-              href="https://maps.google.com/?q=1031+West+Spruce+Drive+Sturgeon+Bay+WI+54235"
+              href="https://maps.google.com/?q=Columbus+OH"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Google Maps"
             >
-              <MapPin className="w-4 h-4 text-white" />
-            </a>
-
-            {/* Houzz */}
-            <a
-              href="https://houzz.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
-              title="Houzz"
-            >
-              <Globe className="w-4 h-4 text-white" />
+              <MapPin className="w-4 h-4" />
             </a>
           </div>
 
-          <div className="pt-4 border-t border-neutral-800 text-[10px] text-neutral-400 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p>© {new Date().getFullYear()} Kings Appliance Service LLC. All rights reserved.</p>
-            <p>Door County, Wisconsin Local Service</p>
+          <div className="pt-4 border-t border-neutral-800 text-[11px] text-neutral-400 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>© {new Date().getFullYear()} OHIO Pro Care Services LLC. All rights reserved.</p>
+            <p className="text-[#FFD000]">Ohio Proud Local Service</p>
           </div>
         </div>
 

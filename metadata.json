@@ -1,6 +1,6 @@
 {
-  "name": "Kings Appliance Service",
-  "description": "Professional appliance repair and installation services in the Door County, WI area with transparent $79.95 diagnostic pricing, easy online booking, and expert technicians.",
+  "name": "OHIO Pro Care Services",
+  "description": "Professional appliance repair, installation, and home care services across Central and Greater Ohio with transparent $79.95 diagnostic pricing, easy online booking, and expert technicians.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

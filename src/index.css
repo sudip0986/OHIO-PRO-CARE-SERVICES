@@ -5,12 +5,14 @@
   --font-serif-italic: "Playfair Display", Georgia, serif;
   --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  --color-brand-dark: #262626;
-  --color-brand-darker: #1d1d1d;
-  --color-brand-charcoal: #474747;
-  --color-brand-green: #18ff35;
-  --color-brand-orange: #d95c2b;
-  --color-brand-orange-hover: #c14d20;
+  --color-brand-yellow: #FFD000;
+  --color-brand-yellow-light: #FFE033;
+  --color-brand-yellow-hover: #F2BD00;
+  --color-brand-gold: #F59E0B;
+  --color-brand-dark: #181818;
+  --color-brand-darker: #0F0F0F;
+  --color-brand-charcoal: #2A2A2A;
+  --color-brand-surface: #222222;
 }
 
 body {
@@ -27,6 +29,64 @@ body {
   font-style: italic;
 }
 
-.neon-diamond-border {
-  filter: drop-shadow(0px 0px 5px rgba(24, 255, 53, 0.65));
+/* Yellow Button Styles */
+.btn-yellow {
+  background-color: #FFD000;
+  color: #111111;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px 0 rgba(255, 208, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.btn-yellow:hover {
+  background-color: #FFE033;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(255, 208, 0, 0.45);
+}
+
+.btn-yellow:active {
+  transform: translateY(0);
+}
+
+.btn-yellow-outline {
+  border: 2px solid #FFD000;
+  color: #FFD000;
+  background-color: transparent;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.btn-yellow-outline:hover {
+  background-color: #FFD000;
+  color: #111111;
+  box-shadow: 0 0 15px rgba(255, 208, 0, 0.4);
+}
+
+/* Yellow Hyperlink Style */
+.link-yellow {
+  color: #FFD000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 208, 0, 0.5);
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.link-yellow:hover {
+  color: #FFE54C;
+  text-decoration-color: #FFD000;
+  text-shadow: 0 0 8px rgba(255, 208, 0, 0.4);
+}
+
+/* Glowing Yellow Border Effect */
+.neon-yellow-glow {
+  filter: drop-shadow(0px 0px 8px rgba(255, 208, 0, 0.55));
 }

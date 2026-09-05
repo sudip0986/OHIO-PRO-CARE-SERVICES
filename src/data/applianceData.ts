@@ -2,36 +2,8 @@ import { ServiceItem, BrandInfo, ServiceArea } from '../types';
 
 export const SERVICE_ITEMS: ServiceItem[] = [
   {
-    id: 'oven-range',
-    name: 'Oven/Stove/Range Repairs',
-    description: 'Gas and electric range heating issues, igniter failures, temperature sensor calibration, broken glass tops, and baking element replacements.',
-    typicalIssues: ['Oven not heating up', 'Gas burner clicking continuously', 'Inaccurate temperature', 'Bake element burned out', 'Broiler not turning on'],
-    diagnosticFee: '$79.95'
-  },
-  {
-    id: 'cooktop',
-    name: 'Cooktop Repairs',
-    description: 'Induction cooktop surface sensor errors, radiant surface elements, dual-zone burner switches, and spark ignition modules.',
-    typicalIssues: ['Burner won\'t turn on', 'Indicator light stays on', 'Glass cooktop cracked/not heating', 'Sparks continuously'],
-    diagnosticFee: '$79.95'
-  },
-  {
-    id: 'dishwasher',
-    name: 'Dishwasher Repairs',
-    description: 'Drain pump blockages, wash motor clogs, water inlet valve leaks, spray arm blockages, and electronic control board malfunctions.',
-    typicalIssues: ['Standing water in bottom', 'Dishes coming out dirty', 'Leaking from bottom door', 'Won\'t start cycle or beeping'],
-    diagnosticFee: '$79.95'
-  },
-  {
-    id: 'microwave',
-    name: 'Microwave Repairs',
-    description: 'Over-the-range and built-in microwave magnetrons, high-voltage diode replacement, door microswitches, turntable motors, and exhaust fan repairs.',
-    typicalIssues: ['Turntable turns but doesn\'t heat', 'Sparks inside cavity', 'Door latch switch error', 'Loud humming noise'],
-    diagnosticFee: '$79.95'
-  },
-  {
     id: 'refrigerator',
-    name: 'Refrigerator Repairs',
+    name: 'Refrigerator & Freezer Repairs',
     description: 'Sealed system diagnostics, defrost thermostat and heater replacement, evaporator fan motors, condenser coil cleaning, and ice maker rebuilds.',
     typicalIssues: ['Fresh food section warm / freezer cold', 'Ice maker stopped making ice', 'Water pooling under crisper drawers', 'Clicking noise from back compressor'],
     diagnosticFee: '$79.95',
@@ -46,11 +18,48 @@ export const SERVICE_ITEMS: ServiceItem[] = [
     isPopular: true
   },
   {
+    id: 'dishwasher',
+    name: 'Dishwasher Repairs',
+    description: 'Drain pump blockages, wash motor clogs, water inlet valve leaks, spray arm blockages, and electronic control board malfunctions.',
+    typicalIssues: ['Standing water in bottom', 'Dishes coming out dirty', 'Leaking from bottom door', 'Won\'t start cycle or beeping'],
+    diagnosticFee: '$79.95',
+    isPopular: true
+  },
+  {
+    id: 'oven-range',
+    name: 'Oven/Stove/Range Repairs',
+    description: 'Gas and electric range heating issues, igniter failures, temperature sensor calibration, broken glass tops, and baking element replacements.',
+    typicalIssues: ['Oven not heating up', 'Gas burner clicking continuously', 'Inaccurate temperature', 'Bake element burned out', 'Broiler not turning on'],
+    diagnosticFee: '$79.95'
+  },
+  {
+    id: 'cooktop',
+    name: 'Cooktop Repairs',
+    description: 'Induction cooktop surface sensor errors, radiant surface elements, dual-zone burner switches, and spark ignition modules.',
+    typicalIssues: ['Burner won\'t turn on', 'Indicator light stays on', 'Glass cooktop cracked/not heating', 'Sparks continuously'],
+    diagnosticFee: '$79.95'
+  },
+  {
+    id: 'microwave',
+    name: 'Microwave Repairs',
+    description: 'Over-the-range and built-in microwave magnetrons, high-voltage diode replacement, door microswitches, turntable motors, and exhaust fan repairs.',
+    typicalIssues: ['Turntable turns but doesn\'t heat', 'Sparks inside cavity', 'Door latch switch error', 'Loud humming noise'],
+    diagnosticFee: '$79.95'
+  },
+  {
     id: 'dryer-vent',
     name: 'Dryer Vent Cleaning',
     description: 'Professional high-velocity rotary brush cleaning of exterior lint ductwork to prevent fires, reduce drying times, and extend appliance lifespan.',
     typicalIssues: ['Clothes take 2+ cycles to dry', 'Dryer unit gets excessively hot to touch', 'Burning lint odor in laundry room', 'Flapper vent outside not opening fully'],
     diagnosticFee: '$79.95 (Included with service)',
+    isPopular: true
+  },
+  {
+    id: 'plumbing-care',
+    name: 'Garbage Disposal & Water Lines',
+    description: 'Disposal motor jams, leaky flange seals, under-sink dishwasher connections, refrigerator braided water line installs, and fixture care.',
+    typicalIssues: ['Garbage disposal humming and jammed', 'Water dripping under kitchen sink', 'Ice maker water line slow or leaking', 'Air gap overflowing'],
+    diagnosticFee: '$79.95',
     isPopular: true
   },
   {
@@ -67,7 +76,7 @@ export const BRANDS_LIST: BrandInfo[] = [
     id: 'whirlpool',
     name: 'Whirlpool',
     tier: 'Top Residential',
-    description: 'America\'s most popular household brand. We carry extensive OEM parts directly on our service trucks for same-day repairs.',
+    description: 'America\'s most popular household brand. We carry extensive OEM parts directly on our service trucks for same-day repairs across Ohio.',
     popularAppliances: ['Refrigerators', 'Front & Top Load Washers', 'Electric & Gas Dryers', 'Dishwashers'],
     truckStockedParts: true,
     warrantyFriendly: true
@@ -91,38 +100,20 @@ export const BRANDS_LIST: BrandInfo[] = [
     warrantyFriendly: true
   },
   {
-    id: 'hotpoint',
-    name: 'Hotpoint',
-    tier: 'Top Residential',
-    description: 'Reliable value appliances widely used in Door County cottages, rentals, and family residences. Fast turnaround on common components.',
-    popularAppliances: ['Top Freezer Refrigerators', 'Electric Ranges', 'Top Load Washers'],
-    truckStockedParts: true,
-    warrantyFriendly: true
-  },
-  {
-    id: 'amana',
-    name: 'Amana',
-    tier: 'Top Residential',
-    description: 'Dependable essentials. We carry belts, igniters, thermal fuses, and water valves in stock.',
-    popularAppliances: ['Dryers', 'Ranges', 'Freezers', 'Microwaves'],
-    truckStockedParts: true,
-    warrantyFriendly: true
-  },
-  {
-    id: 'jennair',
-    name: 'JennAir',
-    tier: 'Premium / Luxury',
-    description: 'High-end luxury cooking and refrigeration suites. Precision downdraft systems, convection ovens, and column refrigeration service.',
-    popularAppliances: ['Downdraft Cooktops', 'Convection Wall Ovens', 'Built-in Refrigerators'],
-    truckStockedParts: true,
-    warrantyFriendly: true
-  },
-  {
     id: 'lg',
     name: 'LG',
     tier: 'Top Residential',
     description: 'Linear inverter compressors, direct drive washing machines, and smart Wi-Fi diagnostics. Certified troubleshooting protocols.',
     popularAppliances: ['InstaView Refrigerators', 'Direct Drive Front Load Washers', 'TrueSteam Dryers'],
+    truckStockedParts: true,
+    warrantyFriendly: true
+  },
+  {
+    id: 'samsung',
+    name: 'Samsung',
+    tier: 'Top Residential',
+    description: 'Smart appliances, twin cooling evaporators, ice master troubleshooting, and digital inverter motor diagnostics.',
+    popularAppliances: ['Bespoke Refrigerators', 'FlexWash Washers', 'Electric Ranges'],
     truckStockedParts: true,
     warrantyFriendly: true
   },
@@ -145,15 +136,6 @@ export const BRANDS_LIST: BrandInfo[] = [
     warrantyFriendly: true
   },
   {
-    id: 'samsung',
-    name: 'Samsung',
-    tier: 'Top Residential',
-    description: 'Smart appliances, twin cooling evaporators, ice master troubleshooting, and digital inverter motor diagnostics.',
-    popularAppliances: ['Bespoke Refrigerators', 'FlexWash Washers', 'Electric Ranges'],
-    truckStockedParts: true,
-    warrantyFriendly: true
-  },
-  {
     id: 'sub-zero',
     name: 'Sub-Zero / Wolf',
     tier: 'Premium / Luxury',
@@ -170,22 +152,50 @@ export const BRANDS_LIST: BrandInfo[] = [
     popularAppliances: ['Gallery Induction Ranges', 'Air Fry Ovens', 'Top-Freezer Fridges'],
     truckStockedParts: true,
     warrantyFriendly: true
+  },
+  {
+    id: 'hotpoint',
+    name: 'Hotpoint',
+    tier: 'Top Residential',
+    description: 'Reliable value appliances widely used in Ohio residences and rental units. Fast turnaround on common components.',
+    popularAppliances: ['Top Freezer Refrigerators', 'Electric Ranges', 'Top Load Washers'],
+    truckStockedParts: true,
+    warrantyFriendly: true
+  },
+  {
+    id: 'amana',
+    name: 'Amana',
+    tier: 'Top Residential',
+    description: 'Dependable essentials. We carry belts, igniters, thermal fuses, and water valves in stock.',
+    popularAppliances: ['Dryers', 'Ranges', 'Freezers', 'Microwaves'],
+    truckStockedParts: true,
+    warrantyFriendly: true
+  },
+  {
+    id: 'jennair',
+    name: 'JennAir',
+    tier: 'Premium / Luxury',
+    description: 'High-end luxury cooking and refrigeration suites. Precision downdraft systems, convection ovens, and column refrigeration service.',
+    popularAppliances: ['Downdraft Cooktops', 'Convection Wall Ovens', 'Built-in Refrigerators'],
+    truckStockedParts: true,
+    warrantyFriendly: true
   }
 ];
 
 export const SERVICE_AREAS: ServiceArea[] = [
-  { name: 'Sturgeon Bay', zipCode: '54235', county: 'Door County (HQ)', turnaroundDays: 'Same-Day / Next-Day' },
-  { name: 'Egg Harbor', zipCode: '54209', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Baileys Harbor', zipCode: '54202', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Fish Creek', zipCode: '54212', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Ephraim', zipCode: '54211', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Sister Bay', zipCode: '54234', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Ellison Bay', zipCode: '54210', county: 'Door County', turnaroundDays: '2-3 Days/Week' },
-  { name: 'Gills Rock', zipCode: '54210', county: 'Door County', turnaroundDays: '2-3 Days/Week' },
-  { name: 'Washington Island', zipCode: '54246', county: 'Door County', turnaroundDays: 'Scheduled Ferry Service' },
-  { name: 'Forestville', zipCode: '54213', county: 'Southern Door', turnaroundDays: 'Daily Coverage' },
-  { name: 'Gibraltar', zipCode: '54212', county: 'Door County', turnaroundDays: 'Daily Coverage' },
-  { name: 'Brussels', zipCode: '54204', county: 'Southern Door', turnaroundDays: 'Daily Coverage' }
+  { name: 'Columbus', zipCode: '43215', county: 'Franklin County (HQ)', turnaroundDays: 'Same-Day / Next-Day' },
+  { name: 'Dublin', zipCode: '43016', county: 'Franklin / Delaware', turnaroundDays: 'Daily Coverage' },
+  { name: 'Westerville', zipCode: '43081', county: 'Franklin / Delaware', turnaroundDays: 'Daily Coverage' },
+  { name: 'Upper Arlington', zipCode: '43221', county: 'Franklin County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Powell', zipCode: '43065', county: 'Delaware County', turnaroundDays: 'Daily Coverage' },
+  { name: 'New Albany', zipCode: '43054', county: 'Franklin County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Grove City', zipCode: '43123', county: 'Franklin County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Hilliard', zipCode: '43026', county: 'Franklin County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Delaware', zipCode: '43015', county: 'Delaware County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Cleveland Metro', zipCode: '44114', county: 'Cuyahoga County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Akron / Canton', zipCode: '44308', county: 'Summit / Stark', turnaroundDays: 'Daily Coverage' },
+  { name: 'Cincinnati Metro', zipCode: '45202', county: 'Hamilton County', turnaroundDays: 'Daily Coverage' },
+  { name: 'Dayton Metro', zipCode: '45402', county: 'Montgomery County', turnaroundDays: 'Daily Coverage' }
 ];
 
 export const DIY_GUIDE_APPLIANCES = [

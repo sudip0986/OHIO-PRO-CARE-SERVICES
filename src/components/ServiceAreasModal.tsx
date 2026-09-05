@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, MapPin, Search, CheckCircle, Navigation } from 'lucide-react';
-import { KingsLogo } from './KingsLogo';
+import { X, MapPin, Search, CheckCircle, Navigation, ArrowRight } from 'lucide-react';
+import { OhioProLogo } from './OhioProLogo';
 import { SERVICE_AREAS } from '../data/applianceData';
 
 interface ServiceAreasModalProps {
@@ -22,30 +22,30 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
   const handleZipCheck = (e: React.FormEvent) => {
     e.preventDefault();
     const cleanZip = zipInput.trim();
-    const found = SERVICE_AREAS.find((a) => a.zipCode === cleanZip || a.name.toLowerCase() === cleanZip.toLowerCase());
+    const found = SERVICE_AREAS.find((a) => a.zipCode === cleanZip || a.name.toLowerCase().includes(cleanZip.toLowerCase()));
     if (found) {
-      setSearchResult(`Great news! ${found.name} (ZIP ${found.zipCode}) is within our core service area with ${found.turnaroundDays}.`);
-    } else if (cleanZip.startsWith('542')) {
-      setSearchResult(`Yes! Zip code ${cleanZip} is in Door County / Kewaunee area. We service your neighborhood!`);
+      setSearchResult(`Great news! ${found.name} (ZIP ${found.zipCode}) is in our daily core service route with ${found.turnaroundDays}.`);
+    } else if (cleanZip.startsWith('43') || cleanZip.startsWith('44') || cleanZip.startsWith('45')) {
+      setSearchResult(`Yes! Zip code ${cleanZip} is in Ohio. We service your neighborhood! Book online or call (614) 888-CARE.`);
     } else {
-      setSearchResult(`We primarily service Door County, WI (ZIP codes 542xx). Please call us at 920-839-5515 to confirm out-of-area dispatch.`);
+      setSearchResult(`We primarily service Ohio (ZIP codes starting with 43xxx, 44xxx, 45xxx). Please call us at (614) 888-CARE to confirm prompt dispatch.`);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 overflow-y-auto bg-black/75 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 overflow-y-auto bg-black/80 backdrop-blur-sm animate-fadeIn">
       <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-200 my-auto">
         
         {/* Header Bar */}
-        <div className="bg-[#262626] text-white p-6 flex items-center justify-between border-b-2 border-[#18ff35]">
+        <div className="bg-[#121212] text-white p-6 flex items-center justify-between border-b-2 border-[#FFD000]">
           <div className="flex items-center gap-3">
-            <KingsLogo size="sm" showPhone={false} className="w-20 h-14 scale-75" />
+            <OhioProLogo size="sm" showPhone={false} className="w-16 h-12" />
             <div>
-              <span className="text-[10px] tracking-widest text-[#18ff35] uppercase font-bold">
-                Door County, Wisconsin
+              <span className="text-[10px] tracking-widest text-[#FFD000] uppercase font-bold">
+                OHIO PRO CARE SERVICES
               </span>
               <h3 className="font-condensed text-3xl sm:text-4xl tracking-wide text-white leading-tight">
-                WI SERVICE AREAS
+                OHIO SERVICE AREAS
               </h3>
             </div>
           </div>
@@ -64,26 +64,26 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
           {/* Quick ZIP Check Tool */}
           <form onSubmit={handleZipCheck} className="bg-neutral-50 p-4 rounded-2xl border border-neutral-200">
             <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
-              Check Your Door County ZIP Code Or Town:
+              Check Your Ohio ZIP Code Or City:
             </label>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="text"
-                placeholder="Enter ZIP code (e.g. 54235) or town..."
+                placeholder="Enter Ohio ZIP code (e.g. 43215) or city..."
                 value={zipInput}
                 onChange={(e) => setZipInput(e.target.value)}
-                className="flex-1 border border-neutral-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm bg-white"
+                className="flex-1 border border-neutral-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm bg-white focus:ring-2 focus:ring-[#FFD000]"
               />
               <button
                 type="submit"
-                className="bg-[#2d2d2d] hover:bg-black text-white px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm cursor-pointer transition-colors"
+                className="btn-yellow px-6 py-2.5 rounded-xl font-black text-xs sm:text-sm cursor-pointer shadow-md"
               >
                 Check Coverage
               </button>
             </div>
             {searchResult && (
-              <p className="mt-3 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+              <p className="mt-3 text-xs font-semibold text-amber-900 bg-amber-50 border border-amber-300 p-2.5 rounded-lg flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-amber-600 shrink-0" />
                 {searchResult}
               </p>
             )}
@@ -92,13 +92,13 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
           {/* Service Areas Directory */}
           <div>
             <h4 className="font-extrabold text-sm uppercase tracking-wider text-neutral-900 mb-3">
-              Door County Communities We Regularly Visit:
+              Key Ohio Regions &amp; Municipalities We Regularly Dispatch To:
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {SERVICE_AREAS.map((area) => (
                 <div
                   key={area.name}
-                  className="p-3.5 rounded-xl border border-neutral-200 hover:border-neutral-400 bg-white transition-all flex flex-col justify-between"
+                  className="p-3.5 rounded-xl border border-neutral-200 hover:border-amber-400 bg-white transition-all flex flex-col justify-between hover:shadow-md"
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -106,7 +106,7 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
                       <span className="text-[10px] font-mono text-neutral-500">{area.zipCode}</span>
                     </div>
                     <span className="text-[11px] text-neutral-500 block mt-1">{area.county}</span>
-                    <span className="text-[10px] font-medium text-emerald-700 block mt-0.5">
+                    <span className="text-[10px] font-semibold text-amber-700 block mt-0.5">
                       {area.turnaroundDays}
                     </span>
                   </div>
@@ -116,9 +116,10 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
                       onClose();
                       onSelectAreaForBooking(area.name);
                     }}
-                    className="mt-3 text-left text-[11px] font-bold text-[#d95c2b] hover:underline cursor-pointer"
+                    className="link-yellow mt-3 text-left text-[11px] font-bold text-amber-600 hover:text-amber-700 cursor-pointer flex items-center gap-1"
                   >
-                    Schedule in {area.name} →
+                    <span>Schedule in {area.name}</span>
+                    <ArrowRight className="w-3 h-3 text-amber-600" />
                   </button>
                 </div>
               ))}
@@ -126,26 +127,27 @@ export const ServiceAreasModal: React.FC<ServiceAreasModalProps> = ({
           </div>
 
           {/* Headquarters Info */}
-          <div className="bg-[#262626] text-white p-5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-[#121212] text-white p-5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[#FFD000]/30 shadow-lg">
             <div>
-              <span className="text-[10px] tracking-widest text-[#18ff35] uppercase font-bold block">
-                Central Operations Hub
+              <span className="text-[10px] tracking-widest text-[#FFD000] uppercase font-bold block">
+                Central Operations &amp; Dispatch
               </span>
               <h5 className="font-bold text-base text-white mt-0.5">
-                Our Headquarters: 1031 West Spruce Drive
+                OHIO PRO CARE SERVICES HQ
               </h5>
               <p className="text-xs text-neutral-300">
-                Sturgeon Bay, WI - 54235 • Hours: Mon-Fri 8:00 AM - 5:00 PM
+                Columbus, OH • Dispatch Hotlines: (614) 888-CARE • Mon-Fri 8:00 AM - 6:00 PM
               </p>
             </div>
-            <a
-              href="https://maps.google.com/?q=1031+West+Spruce+Drive+Sturgeon+Bay+WI+54235"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-neutral-900 px-4 py-2 rounded-xl text-xs font-bold hover:bg-neutral-200 transition-colors whitespace-nowrap"
+            <button
+              onClick={() => {
+                onClose();
+                onSelectAreaForBooking('Columbus');
+              }}
+              className="btn-yellow px-4 py-2 rounded-xl text-xs font-black whitespace-nowrap cursor-pointer"
             >
-              Get Directions
-            </a>
+              Book in Ohio
+            </button>
           </div>
 
         </div>

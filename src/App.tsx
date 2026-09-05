@@ -15,6 +15,7 @@ import { DiyDecisionModal } from './components/DiyDecisionModal';
 import { DiagnosticPricingModal } from './components/DiagnosticPricingModal';
 import { ServiceAreasModal } from './components/ServiceAreasModal';
 import { LegalModal } from './components/LegalModal';
+import { Phone, Calendar } from 'lucide-react';
 
 export default function App() {
   // Modal states
@@ -48,7 +49,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-800 flex flex-col selection:bg-[#18ff35] selection:text-black">
+    <div className="min-h-screen bg-white text-neutral-800 flex flex-col selection:bg-[#FFD000] selection:text-black">
       
       {/* 1. Top Header */}
       <Header
@@ -166,16 +167,27 @@ export default function App() {
         type={legalModalType || 'privacy'}
       />
 
-      {/* Quick Call floating button for mobile users */}
-      <div className="fixed bottom-5 right-5 z-40 sm:hidden">
+      {/* Quick Action Floating Bar for Mobile Users */}
+      <div className="fixed bottom-4 left-4 right-4 z-40 sm:hidden flex gap-2">
         <a
-          href="tel:9208395515"
-          className="flex items-center gap-2 bg-[#262626] border border-[#18ff35] text-white px-4 py-3 rounded-full shadow-2xl font-bold text-xs active:scale-95"
+          href="tel:6148882273"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#141414] border border-[#FFD000]/60 text-white py-3 rounded-2xl shadow-2xl font-bold text-xs active:scale-95"
           id="mobile-quick-call-btn"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#18ff35] animate-pulse" />
-          <span>Call 920-839-5515</span>
+          <Phone className="w-3.5 h-3.5 text-[#FFD000]" />
+          <span>(614) 888-CARE</span>
         </a>
+        <button
+          onClick={() => {
+            setPreselectedService('');
+            setIsBookingOpen(true);
+          }}
+          className="flex-1 btn-yellow py-3 rounded-2xl shadow-2xl font-black text-xs uppercase flex items-center justify-center gap-1.5 active:scale-95"
+          id="mobile-quick-book-btn"
+        >
+          <Calendar className="w-3.5 h-3.5 text-black" />
+          <span>Book Now</span>
+        </button>
       </div>
 
     </div>

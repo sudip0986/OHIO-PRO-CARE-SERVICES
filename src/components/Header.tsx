@@ -1,6 +1,6 @@
 import React from 'react';
-import { KingsLogo } from './KingsLogo';
-import { MapPin, Globe } from 'lucide-react';
+import { OhioProLogo } from './OhioProLogo';
+import { MapPin, Globe, Phone, Calendar } from 'lucide-react';
 
 interface HeaderProps {
   onOpenBooking: () => void;
@@ -9,56 +9,77 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenServiceAreas }) => {
   return (
-    <header className="bg-[#262626] text-white py-6 px-4 md:px-8 border-b border-neutral-800" id="top-navigation-header">
-      <div className="max-w-[1500px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <header className="bg-[#121212] text-white py-5 px-4 md:px-8 border-b border-neutral-800 shadow-xl" id="top-navigation-header">
+      <div className="max-w-[1500px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
         
-        {/* Left: Schedule Online Quick Link */}
-        <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-neutral-300">
-            SCHEDULE ONLINE:
-          </span>
+        {/* Left: Schedule Online & Phone Quick Access */}
+        <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left space-y-1.5">
+          <div className="flex items-center gap-2">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#FFD000] animate-pulse"></span>
+            <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-neutral-300">
+              FAST ONLINE SCHEDULING:
+            </span>
+          </div>
+
           <button
             onClick={onOpenBooking}
-            className="text-white font-bold text-base md:text-lg underline underline-offset-4 hover:text-[#18ff35] transition-colors mt-1 cursor-pointer text-left"
+            className="text-[#FFD000] font-extrabold text-base md:text-lg underline underline-offset-4 decoration-[#FFD000] hover:text-white hover:decoration-white transition-all cursor-pointer text-left flex items-center gap-1.5"
             id="header-booking-link"
           >
-            BIT.LY/KINGSAPPLIANCEBOOKINGFORM
+            <Calendar className="w-4 h-4 inline-block text-[#FFD000]" />
+            SCHEDULE APPOINTMENT ONLINE
           </button>
+
+          <div className="flex items-center gap-2 text-xs text-neutral-300 pt-0.5">
+            <Phone className="w-3.5 h-3.5 text-[#FFD000]" />
+            <span>Call / Text: </span>
+            <a href="tel:6148882273" className="font-bold text-[#FFD000] hover:underline">
+              (614) 888-CARE (2273)
+            </a>
+          </div>
         </div>
 
-        {/* Center: Kings Diamond Emblem Logo */}
+        {/* Center: Ohio Pro Care Services Diamond Logo */}
         <div className="w-full lg:w-1/3 flex justify-center py-1">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-block transition-transform hover:scale-105 duration-200 cursor-pointer"
-            title="Kings Appliance Service"
+            title="OHIO Pro Care Services"
             id="header-logo-btn"
           >
-            <KingsLogo size="md" />
+            <OhioProLogo size="md" />
           </button>
         </div>
 
-        {/* Right: Service Areas, Social Icons & HQ Address */}
+        {/* Right: Ohio Service Areas & Dispatch info */}
         <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-end text-center lg:text-right space-y-2.5 text-xs">
           <div>
             <button
               onClick={onOpenServiceAreas}
-              className="font-extrabold uppercase leading-snug tracking-tight text-white max-w-lg hover:text-[#18ff35] transition-colors cursor-pointer text-center lg:text-right"
+              className="font-extrabold uppercase leading-snug tracking-tight text-white max-w-lg hover:text-[#FFD000] transition-colors cursor-pointer text-center lg:text-right"
               id="header-service-areas-btn"
             >
-              <u className="underline decoration-[#18ff35] decoration-2">WI SERVICE AREAS:</u>{' '}
-              FORESTVILLE, STURGEON BAY, EGG HARBOR, BAILEYS HARBOR, GIBRALTAR, FISH CREEK, EPHRAIM, SISTER BAY, ELLISON BAY, GILLS ROCK, WASHINGTON ISLAND, + MORE
+              <u className="underline decoration-[#FFD000] decoration-2">OHIO SERVICE AREAS:</u>{' '}
+              COLUMBUS, DUBLIN, WESTERVILLE, UPPER ARLINGTON, POWELL, NEW ALBANY, GROVE CITY, CLEVELAND, CINCINNATI, DAYTON, AKRON + SURROUNDING
             </button>
           </div>
 
-          {/* Social Media Icon Badges */}
-          <div className="flex items-center space-x-2 pt-1 pb-1">
+          {/* Social Media & Action Badges */}
+          <div className="flex items-center space-x-2 pt-0.5">
+            <button
+              onClick={onOpenBooking}
+              className="btn-yellow px-3 py-1 text-xs font-black tracking-wider uppercase cursor-pointer"
+              id="header-book-now-pill"
+            >
+              Book Service
+            </button>
+
             {/* Facebook */}
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Facebook"
               id="social-facebook"
             >
@@ -72,7 +93,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenServiceArea
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Instagram"
               id="social-instagram"
             >
@@ -81,63 +102,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenServiceArea
               </svg>
             </a>
 
-            {/* LinkedIn */}
+            {/* Maps */}
             <a
-              href="https://linkedin.com"
+              href="https://maps.google.com/?q=Columbus+OH"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
-              title="LinkedIn"
-              id="social-linkedin"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
-
-            {/* Map / Location */}
-            <a
-              href="https://maps.google.com/?q=1031+West+Spruce+Drive+Sturgeon+Bay+WI+54235"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
+              className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-[#FFD000] border border-neutral-700 hover:border-[#FFD000] flex items-center justify-center text-white hover:text-black transition-all"
               title="Google Maps"
               id="social-maps"
             >
-              <MapPin className="w-4 h-4 text-white" />
-            </a>
-
-            {/* Yelp */}
-            <a
-              href="https://yelp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
-              title="Yelp"
-              id="social-yelp"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12.016 13.725l1.64 4.672c.237.674-.298 1.342-.988 1.23l-4.887-.79c-.588-.095-.824-.803-.437-1.258l3.18-3.742a.798.798 0 011.492-.112zm-2.046-2.484L5.27 9.878c-.672-.243-.787-1.127-.215-1.572l4.053-3.155c.489-.38 1.189-.047 1.253.564l.519 4.88a.8.8 0 01-1.41.646zm2.846.52l4.63-1.755c.668-.253 1.272.378 1.12 1.07l-1.073 4.834c-.13.585-.858.824-1.325.438l-3.805-3.141a.8.8 0 01.453-1.446zm1.19-2.025l1.39-4.755c.201-.687-.417-1.312-1.096-1.112l-4.808 1.416c-.579.17-.736.887-.291 1.303l3.63 3.398a.798.798 0 001.175-.25z" />
-              </svg>
-            </a>
-
-            {/* Houzz / Home */}
-            <a
-              href="https://houzz.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 flex items-center justify-center text-white hover:text-[#18ff35] transition-colors"
-              title="Houzz"
-              id="social-houzz"
-            >
-              <Globe className="w-4 h-4 text-white" />
+              <MapPin className="w-4 h-4" />
             </a>
           </div>
 
           <p className="font-extrabold tracking-wide uppercase text-neutral-200">
-            OUR HEADQUARTERS:{' '}
+            HEADQUARTERS &amp; DISPATCH:{' '}
             <span className="font-normal text-neutral-300">
-              1031 WEST SPRUCE DRIVE | STURGEON BAY, WI - 54235
+              CENTRAL OHIO REGION | COLUMBUS, OH
             </span>
           </p>
         </div>
