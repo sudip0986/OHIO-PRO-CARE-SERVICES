@@ -9,48 +9,55 @@ import { Footer } from './components/Footer';
 
 // Modals / Interactive Screens
 import { BookingModal } from './components/BookingModal';
-import { BrandsModal } from './components/BrandsModal';
-import { DryerVentModal } from './components/DryerVentModal';
+import { FixturesModal } from './components/FixturesModal';
+import { DrainCareModal } from './components/DrainCareModal';
 import { DiyDecisionModal } from './components/DiyDecisionModal';
 import { DiagnosticPricingModal } from './components/DiagnosticPricingModal';
 import { ServiceAreasModal } from './components/ServiceAreasModal';
 import { LegalModal } from './components/LegalModal';
+import { LoadingScreen } from './components/LoadingScreen';
 import { Phone, Calendar } from 'lucide-react';
 
 export default function App() {
+  // Splash Loading Screen state
+  const [isLoading, setIsLoading] = useState(true);
+
   // Modal states
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState('');
   const [preselectedBrand, setPreselectedBrand] = useState('');
   
   const [isBrandsOpen, setIsBrandsOpen] = useState(false);
-  const [isDryerVentOpen, setIsDryerVentOpen] = useState(false);
+  const [isDrainModalOpen, setIsDrainModalOpen] = useState(false);
   const [isDiyGuideOpen, setIsDiyGuideOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
   const [isServiceAreasOpen, setIsServiceAreasOpen] = useState(false);
-  const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
+  const [legalModalType, setLegalModalType] = useState(null);
 
-  // Trigger booking with specific service preselected
-  const handleOpenBookingWithService = (serviceName: string) => {
+  // Trigger booking with specific plumbing service preselected
+  const handleOpenBookingWithService = (serviceName) => {
     setPreselectedService(serviceName);
     setIsBookingOpen(true);
   };
 
   // Trigger booking with specific brand preselected
-  const handleOpenBookingWithBrand = (brandName: string) => {
+  const handleOpenBookingWithBrand = (brandName) => {
     setPreselectedBrand(brandName);
     setIsBookingOpen(true);
   };
 
-  // Trigger booking for Dryer Vent Cleaning
-  const handleBookDryerVent = () => {
-    setPreselectedService('Dryer Vent Cleaning');
+  // Trigger booking for Emergency Drain / Jetting
+  const handleBookDrainService = () => {
+    setPreselectedService('Drain Cleaning & Hydro Jetting');
     setIsBookingOpen(true);
   };
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 flex flex-col selection:bg-[#FFD000] selection:text-black">
       
+      {/* 0. Introductory Floating Loading Screen */}
+      {isLoading && <LoadingScreen onFinish={() => setIsLoading(false)} />}
+
       {/* 1. Top Header */}
       <Header
         onOpenBooking={() => {
@@ -69,7 +76,7 @@ export default function App() {
           }}
         />
 
-        {/* 3. Repairs Done Right Section */}
+        {/* 3. Plumbing Done Right Section */}
         <RepairsDoneRight
           onOpenBooking={() => {
             setPreselectedService('');
@@ -89,9 +96,9 @@ export default function App() {
           }}
         />
 
-        {/* 6. Services & Brands Grid Section */}
+        {/* 6. Plumbing Services & Fixture Brands Showcase */}
         <ServicesShowcase
-          onOpenDryerVent={() => setIsDryerVentOpen(true)}
+          onOpenDrainModal={() => setIsDrainModalOpen(true)}
           onOpenBrands={() => setIsBrandsOpen(true)}
           onOpenDiyGuide={() => setIsDiyGuideOpen(true)}
           onOpenPricing={() => setIsPricingOpen(true)}
@@ -109,7 +116,7 @@ export default function App() {
         onOpenTerms={() => setLegalModalType('terms')}
       />
 
-      {/* Interactive Booking Wizard Modal */}
+      {/* Interactive Plumbing Booking Wizard Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
@@ -117,21 +124,21 @@ export default function App() {
         preselectedBrand={preselectedBrand}
       />
 
-      {/* Brands Directory Modal */}
-      <BrandsModal
+      {/* Fixtures & Preferred Brands Modal */}
+      <FixturesModal
         isOpen={isBrandsOpen}
         onClose={() => setIsBrandsOpen(false)}
         onSelectBrandForBooking={handleOpenBookingWithBrand}
       />
 
-      {/* Dryer Vent Cleaning Special Feature Modal */}
-      <DryerVentModal
-        isOpen={isDryerVentOpen}
-        onClose={() => setIsDryerVentOpen(false)}
-        onBookDryerVent={handleBookDryerVent}
+      {/* Emergency Hydro Jetting & Drain Care Modal */}
+      <DrainCareModal
+        isOpen={isDrainModalOpen}
+        onClose={() => setIsDrainModalOpen(false)}
+        onBookService={handleBookDrainService}
       />
 
-      {/* DIY It Or Say Goodbye To It? Calculator Modal */}
+      {/* DIY Plumbing Decision Guide Calculator Modal */}
       <DiyDecisionModal
         isOpen={isDiyGuideOpen}
         onClose={() => setIsDiyGuideOpen(false)}
@@ -141,7 +148,7 @@ export default function App() {
         }}
       />
 
-      {/* Diagnostic Fee & No Hidden Fees Modal */}
+      {/* Flat $85.50 Diagnostic Fee & Transparent Pricing Modal */}
       <DiagnosticPricingModal
         isOpen={isPricingOpen}
         onClose={() => setIsPricingOpen(false)}
@@ -151,7 +158,7 @@ export default function App() {
         }}
       />
 
-      {/* Service Areas & Coverage Lookup Modal */}
+      {/* Ohio City & Regional Service Areas Coverage Modal */}
       <ServiceAreasModal
         isOpen={isServiceAreasOpen}
         onClose={() => setIsServiceAreasOpen(false)}
@@ -170,12 +177,12 @@ export default function App() {
       {/* Quick Action Floating Bar for Mobile Users */}
       <div className="fixed bottom-4 left-4 right-4 z-40 sm:hidden flex gap-2">
         <a
-          href="tel:6148882273"
+          href="tel:2168882273"
           className="flex-1 flex items-center justify-center gap-2 bg-[#141414] border border-[#FFD000]/60 text-white py-3 rounded-2xl shadow-2xl font-bold text-xs active:scale-95"
           id="mobile-quick-call-btn"
         >
           <Phone className="w-3.5 h-3.5 text-[#FFD000]" />
-          <span>(614) 888-CARE</span>
+          <span>(216) 888-CARE</span>
         </a>
         <button
           onClick={() => {
@@ -186,7 +193,7 @@ export default function App() {
           id="mobile-quick-book-btn"
         >
           <Calendar className="w-3.5 h-3.5 text-black" />
-          <span>Book Now</span>
+          <span>Book Plumber</span>
         </button>
       </div>
 
