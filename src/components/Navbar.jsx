@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { companyInfo } from '../data/content';
+import { companyInfo, brandLogo } from '../data/content';
 
 export default function Navbar({ onOpenModal }) {
   const [isSolid, setIsSolid] = useState(false);
@@ -17,7 +17,13 @@ export default function Navbar({ onOpenModal }) {
     <nav className={`navbar ${isSolid ? 'navbar--solid' : ''}`} aria-label="Main Navigation">
       <div className="nav-inner">
         <a href="#" className="brand" aria-label={`${companyInfo.name} Homepage`}>
-          <span className="brand-mark">O</span>
+          <img
+            src={brandLogo}
+            alt={`${companyInfo.name} Logo`}
+            className="brand-logo"
+            width="52"
+            height="52"
+          />
           <span className="brand-name">{companyInfo.name}</span>
         </a>
 

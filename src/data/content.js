@@ -1,3 +1,4 @@
+import brandLogoImg from '../assets/images/logo.png';
 import heroHomeCareImg from '../assets/images/hero-home-care.jpg';
 import applianceRepairImg from '../assets/images/appliance-repair.jpg';
 import hvacServiceImg from '../assets/images/hvac-service.jpg';
@@ -10,6 +11,7 @@ import tech5Img from '../assets/images/tech5.jpg';
 import tech6Img from '../assets/images/tech6.jpg';
 import tech7Img from '../assets/images/tech7.jpg';
 
+export const brandLogo = brandLogoImg;
 export const heroImage = heroHomeCareImg;
 
 export const companyInfo = {

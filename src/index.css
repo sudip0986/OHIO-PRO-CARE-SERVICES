@@ -20,7 +20,7 @@
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --max: 1180px;
-  --nav-h: 64px;
+  --nav-h: 74px;
 }
 
 *, *::before, *::after {
@@ -242,6 +242,26 @@ button {
 
 .brand:hover .brand-mark {
   transform: rotate(-3deg) scale(1.05);
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.2s var(--ease-out);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.06);
+}
+
+.brand-logo--footer {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
 }
 
 .brand-mark.small {
@@ -1188,6 +1208,13 @@ button {
   }
   .nav-links a:not(.nav-cta) {
     display: none;
+  }
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+  .brand-name {
+    font-size: 17px;
   }
   .hero {
     padding: 48px 0 40px;
