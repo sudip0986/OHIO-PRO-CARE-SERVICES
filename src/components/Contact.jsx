@@ -7,8 +7,8 @@ export default function Contact() {
       <div className="container contact-inner">
         <div className="contact-head">
           <p className="eyebrow">Get in Touch</p>
-          <h2>Book Trusted Plumbing Service</h2>
-          <p>Reach us directly for immediate emergency dispatch and service availability.</p>
+          <h2>Book Trusted Home Service</h2>
+          <p>Reach us directly for immediate dispatch and service availability across appliances, HVAC, plumbing, and more.</p>
         </div>
 
         <div className="contact-methods">

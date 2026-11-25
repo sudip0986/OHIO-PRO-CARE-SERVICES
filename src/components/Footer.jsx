@@ -12,7 +12,7 @@ export default function Footer() {
           <span>{companyInfo.name}</span>
         </div>
         <div className="footer-info">
-          <span>Plumbing Service • Ohio</span>
+          <span>Appliances • HVAC • Plumbing • Home Care — Ohio</span>
           <span>{companyInfo.address}</span>
         </div>
         <p className="footer-copy">© {currentYear} {companyInfo.name}. All rights reserved.</p>

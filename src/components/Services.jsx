@@ -10,12 +10,12 @@ export default function Services({ onOpenModal }) {
       <div className="container">
         <div className="section-head">
           <p className="eyebrow">What We Offer</p>
-          <h2>Complete Plumbing Solutions</h2>
-          <p>Expert residential and commercial plumbing repairs, leak detection, and drain care across Ohio.</p>
+          <h2>Complete Home Care Solutions</h2>
+          <p>Expert residential and commercial appliance repair, HVAC heating &amp; cooling, plumbing, water heaters, and home system maintenance across Ohio.</p>
         </div>
 
         <div className="services-layout">
-          <div className="services-tabs" role="tablist" aria-label="Plumbing Services">
+          <div className="services-tabs" role="tablist" aria-label="Home Care Services">
             {servicesData.map((service, index) => (
               <button
                 key={service.id}

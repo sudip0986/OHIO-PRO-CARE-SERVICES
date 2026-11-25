@@ -31,8 +31,8 @@ export default function Gallery({ onOpenModal }) {
       <div className="container gallery-inner">
         <div className="gallery-text">
           <p className="eyebrow">Our Team</p>
-          <h2>Licensed Master Plumbers</h2>
-          <p>Meet our certified, insured plumbing specialists serving Ohio homes and businesses with prompt, dependable care.</p>
+          <h2>Certified Service Technicians</h2>
+          <p>Meet our skilled, insured technicians serving Ohio homes and businesses with prompt, dependable appliance, HVAC, plumbing, and home system care.</p>
           <blockquote className="testimonial">
             <p>&ldquo;{testimonial.quote}&rdquo;</p>
             <cite>— {testimonial.author}</cite>
@@ -40,10 +40,10 @@ export default function Gallery({ onOpenModal }) {
           <button
             type="button"
             className="btn btn-primary btn-lg"
-            onClick={() => onOpenModal("Master Plumber Diagnostic Visit")}
+            onClick={() => onOpenModal("Certified Technician Diagnostic Visit")}
             id="gallery-book-btn"
           >
-            Book a Plumber
+            Book a Technician
           </button>
         </div>
 
@@ -52,12 +52,12 @@ export default function Gallery({ onOpenModal }) {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="gallery-imgs" aria-label="Plumbers Gallery">
+          <div className="gallery-imgs" aria-label="Technicians Gallery">
             {technicianImages.map((src, index) => (
               <img
                 key={src}
                 src={src}
-                alt={`Licensed plumber ${index + 1}`}
+                alt={`Certified technician ${index + 1}`}
                 className={`img-main ${currentSlide === index ? 'active' : ''}`}
                 style={{
                   opacity: currentSlide === index ? 1 : 0,
@@ -67,6 +67,7 @@ export default function Gallery({ onOpenModal }) {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: 'center 20%',
                   transition: 'opacity 0.8s ease-in-out, transform 0.8s ease-out'
                 }}
               />
@@ -77,7 +78,7 @@ export default function Gallery({ onOpenModal }) {
               type="button"
               className="gallery-nav-btn prev"
               onClick={prevSlide}
-              aria-label="Previous plumber image"
+              aria-label="Previous technician image"
             >
               ‹
             </button>
@@ -85,7 +86,7 @@ export default function Gallery({ onOpenModal }) {
               type="button"
               className="gallery-nav-btn next"
               onClick={nextSlide}
-              aria-label="Next plumber image"
+              aria-label="Next technician image"
             >
               ›
             </button>
@@ -93,7 +94,7 @@ export default function Gallery({ onOpenModal }) {
             {/* Floating Specialist Badge */}
             <div className="gallery-badge">
               <span className="badge-dot"></span>
-              <span>Licensed Master Plumber • {currentSlide + 1} / {technicianImages.length}</span>
+              <span>Certified Service Technician • {currentSlide + 1} / {technicianImages.length}</span>
             </div>
           </div>
 
@@ -104,7 +105,7 @@ export default function Gallery({ onOpenModal }) {
                 type="button"
                 className={`gallery-dot ${currentSlide === index ? 'active' : ''}`}
                 onClick={() => setCurrentSlide(index)}
-                aria-label={`Jump to plumber ${index + 1}`}
+                aria-label={`Jump to technician ${index + 1}`}
               />
             ))}
           </div>

@@ -1,6 +1,6 @@
 {
-  "name": "Grandmark",
-  "short_name": "Grandmark",
+  "name": "Ohio Pro Care Services",
+  "short_name": "Ohio Pro Care",
   "icons": [
     {
       "src": "/favicon-32x32.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0f4c81",
-  "background_color": "#f2f6fb",
+  "theme_color": "#1a3a2a",
+  "background_color": "#fafaf8",
   "display": "standalone"
 }

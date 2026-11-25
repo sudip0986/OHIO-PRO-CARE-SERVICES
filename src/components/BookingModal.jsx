@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { servicesData } from '../data/content';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
+  const defaultService = servicesData[0].title;
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: 'Emergency Plumbing & Leak Repair',
+    service: defaultService,
     date: '',
     notes: ''
   });
@@ -55,7 +56,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
         setFormData({
           name: '',
           phone: '',
-          service: 'Heating System Service',
+          service: defaultService,
           date: '',
           notes: ''
         });
@@ -99,7 +100,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
               Schedule Your Service
             </h3>
             <p style={{ color: 'var(--ink-2)', fontSize: '14px' }}>
-              Fill out the form below and our team will get in touch with you immediately.
+              Fill out the form below and our certified technician team will get in touch with you immediately.
             </p>
 
             <form className="modal-form" onSubmit={handleSubmit}>
@@ -142,10 +143,11 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
                       {s.title}
                     </option>
                   ))}
-                  <option value="Master Plumber Diagnostic Visit">Master Plumber Diagnostic Visit</option>
-                  <option value="Emergency Drain / Sewer Backup">Emergency Drain / Sewer Backup</option>
-                  <option value="Water Line / Repiping Consultation">Water Line / Repiping Consultation</option>
-                  <option value="Other Plumbing Repair">Other Plumbing Repair</option>
+                  <option value="Certified Technician Diagnostic Visit">Certified Technician Diagnostic Visit</option>
+                  <option value="Emergency HVAC Heating / Cooling Repair">Emergency HVAC Heating / Cooling Repair</option>
+                  <option value="Major Kitchen or Laundry Appliance Repair">Major Kitchen or Laundry Appliance Repair</option>
+                  <option value="Emergency Plumbing / Leak or Drain Backup">Emergency Plumbing / Leak or Drain Backup</option>
+                  <option value="Other Home System Repair">Other Home System Repair</option>
                 </select>
               </div>
 
@@ -166,7 +168,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
                   id="modal-notes"
                   name="notes"
                   rows="3"
-                  placeholder="Briefly describe your plumbing, pipe, or drain issue..."
+                  placeholder="Briefly describe your appliance, HVAC, plumbing, or home repair issue..."
                   value={formData.notes}
                   onChange={handleChange}
                 />

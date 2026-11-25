@@ -14,7 +14,7 @@ export default function Process() {
           {processSteps.map((step) => (
             <div key={step.num} className="process-card">
               <span className="process-num">{step.num}</span>
-              <h4>{step.num === "03" ? "Repair & Verify" : step.title}</h4>
+              <h4>{step.title}</h4>
               <p>{step.description}</p>
             </div>
           ))}

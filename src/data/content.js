@@ -1,11 +1,11 @@
 export const companyInfo = {
-  name: "Ohio Pro Plumbing Services",
+  name: "Ohio Pro Care Services",
   phone: "(567) 453-0586",
   phoneRaw: "+15674530586",
   email: "support.ohioprocareservices@gmail.com",
   address: "6545 Market Ave, Canton, OH 44721",
   officialWebsite: "https://unitedhvaccare.com/",
-  badge: "Licensed & Insured Master Plumbers — Ohio",
+  badge: "Certified & Insured Home Service Technicians — Ohio",
   years: "15+",
   homesServed: "8,500+",
   rating: "4.9/5"
@@ -13,55 +13,64 @@ export const companyInfo = {
 
 export const servicesData = [
   {
-    id: "emergency-leaks",
-    title: "Emergency Plumbing & Leak Repair",
-    description: "Rapid dispatch across Ohio for burst pipes, hidden water leaks, slab leaks, and urgent pipe restorations with zero mess.",
+    id: "appliance-repair",
+    title: "Appliance Repair & Diagnostics",
+    description: "Same-day diagnostics and repair for refrigerators, washers, dryers, ovens, ranges, dishwashers, and microwaves across all major brands using quality OEM parts.",
+    image: "/images/appliance-repair.png",
+    icon: "🔌"
+  },
+  {
+    id: "hvac-services",
+    title: "HVAC Heating & Air Conditioning",
+    description: "Full-service furnace repair, central AC troubleshooting, heat pumps, thermostat upgrades, ductwork inspection, and seasonal tune-ups to keep Ohio homes comfortable year-round.",
+    image: "/images/hvac-service.png",
+    icon: "❄️"
+  },
+  {
+    id: "plumbing-leaks",
+    title: "Plumbing, Leaks & Drain Care",
+    description: "Fast response across Ohio for burst pipes, hidden water leaks, stubborn drain clogs, sump pumps, fixture installations, and durable PEX or copper repiping.",
     image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80",
     icon: "💧"
   },
   {
     id: "water-heaters",
-    title: "Water Heater Repair & Installation",
-    description: "Expert diagnostics for traditional and tankless water heaters, thermostat replacement, sediment flushing, and same-day installs in Ohio.",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+    title: "Water Heaters & Boilers",
+    description: "Expert troubleshooting and installation for tank and tankless water heaters, residential boilers, heating elements, sediment flushing, and same-day replacements.",
+    image: "/images/hero-kitchen.jpg",
     icon: "🔥"
   },
   {
-    id: "drain-cleaning",
-    title: "Drain Cleaning & Sewer Hydro-Jetting",
-    description: "High-definition camera line inspections, motorized snaking, and high-pressure hydro-jetting to eliminate stubborn clogs and tree roots.",
-    image: "https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=800&q=80",
-    icon: "🔧"
-  },
-  {
-    id: "fixtures-repiping",
-    title: "Fixtures & Whole-Home Repiping",
-    description: "Precision installation and repair for faucets, toilets, garbage disposals, sump pumps, and long-lasting PEX/copper repiping.",
+    id: "home-systems",
+    title: "Electrical & General Home Systems",
+    description: "Dependable multi-trade support for garbage disposals, appliance hookups, dryer vents, exhaust fans, smart home controls, and preventive whole-home maintenance.",
     image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80",
-    icon: "✓"
+    icon: "🔧"
   }
 ];
 
 export const processSteps = [
   {
     num: "01",
-    title: "Schedule Your Ohio Plumber",
-    description: "Share your plumbing issue and select a convenient arrival window for our local master plumber."
+    title: "Schedule Your Ohio Technician",
+    description: "Share your appliance, HVAC, plumbing, or home system issue and select a convenient arrival window for our local certified technician."
   },
   {
     num: "02",
     title: "On-Site Diagnostic",
-    description: "We inspect your plumbing lines, determine the root cause, and provide transparent, upfront fixed pricing."
+    description: "Our technician inspects your equipment, identifies the root cause accurately, and provides transparent, upfront fixed pricing before work begins."
   },
   {
     num: "03",
-    title: "Precision Fix & Test",
-    description: "We execute the repair, pressure-test lines for leak-free flow, and leave your home spotless."
+    title: "Precision Repair & Verify",
+    description: "We complete the repair using durable parts, thoroughly test performance and safety, and leave your home clean and spotless."
   }
 ];
 
-// Preserved Our Team Slideshow images (100% untouched)
+// Our Certified Technicians Slideshow
 export const technicianImages = [
+  "/images/tech6.png",
+  "/images/tech7.png",
   "/images/tech1.jpeg",
   "/images/tech2.jpeg",
   "/images/tech3.jpg",
@@ -70,6 +79,6 @@ export const technicianImages = [
 ];
 
 export const testimonial = {
-  quote: "Very professional, fast, and polite. The plumber quickly isolated our hidden slab leak, repaired the pipe cleanly, and restored our water pressure the same afternoon.",
+  quote: "Very professional, fast, and polite. The technician quickly diagnosed both our cooling unit and kitchen appliance issue, fixed everything cleanly, and had our home running smoothly the same afternoon.",
   author: "Verified Customer, Canton, OH"
 };
