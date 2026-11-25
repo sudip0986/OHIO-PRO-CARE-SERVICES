@@ -21,7 +21,7 @@ export const companyInfo = {
   email: "support.ohioprocareservices@gmail.com",
   address: "6545 Market Ave, Canton, OH 44721",
   officialWebsite: "https://unitedhvaccare.com/",
-  badge: "Certified & Insured Home Service Technicians — Ohio",
+  badge: "Certified Licensed & Insured Home Service Technicians — Ohio",
   years: "15+",
   homesServed: "8,500+",
   rating: "4.9/5"
