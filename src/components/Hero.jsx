@@ -1,5 +1,5 @@
 import React from 'react';
-import { companyInfo } from '../data/content';
+import { companyInfo, heroImage } from '../data/content';
 
 export default function Hero({ onOpenModal }) {
   return (
@@ -36,7 +36,7 @@ export default function Hero({ onOpenModal }) {
         <div className="hero-visual">
           <div className="hero-img-wrap">
             <img
-              src="/images/hero-home-care.png"
+              src={heroImage}
               alt="Certified home service technician inspecting residential appliances, HVAC, and home systems"
               width="700"
               height="525"

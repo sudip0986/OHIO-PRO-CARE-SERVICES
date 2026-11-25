@@ -1,3 +1,17 @@
+import heroHomeCareImg from '../assets/images/hero-home-care.jpg';
+import applianceRepairImg from '../assets/images/appliance-repair.jpg';
+import hvacServiceImg from '../assets/images/hvac-service.jpg';
+import waterHeaterImg from '../assets/images/hero-kitchen.jpg';
+import tech1Img from '../assets/images/tech1.jpeg';
+import tech2Img from '../assets/images/tech2.jpeg';
+import tech3Img from '../assets/images/tech3.jpg';
+import tech4Img from '../assets/images/tech4.jpg';
+import tech5Img from '../assets/images/tech5.jpg';
+import tech6Img from '../assets/images/tech6.jpg';
+import tech7Img from '../assets/images/tech7.jpg';
+
+export const heroImage = heroHomeCareImg;
+
 export const companyInfo = {
   name: "Ohio Pro Care Services",
   phone: "(567) 453-0586",
@@ -16,14 +30,14 @@ export const servicesData = [
     id: "appliance-repair",
     title: "Appliance Repair & Diagnostics",
     description: "Same-day diagnostics and repair for refrigerators, washers, dryers, ovens, ranges, dishwashers, and microwaves across all major brands using quality OEM parts.",
-    image: "/images/appliance-repair.png",
+    image: applianceRepairImg,
     icon: "🔌"
   },
   {
     id: "hvac-services",
     title: "HVAC Heating & Air Conditioning",
     description: "Full-service furnace repair, central AC troubleshooting, heat pumps, thermostat upgrades, ductwork inspection, and seasonal tune-ups to keep Ohio homes comfortable year-round.",
-    image: "/images/hvac-service.png",
+    image: hvacServiceImg,
     icon: "❄️"
   },
   {
@@ -37,7 +51,7 @@ export const servicesData = [
     id: "water-heaters",
     title: "Water Heaters & Boilers",
     description: "Expert troubleshooting and installation for tank and tankless water heaters, residential boilers, heating elements, sediment flushing, and same-day replacements.",
-    image: "/images/hero-kitchen.jpg",
+    image: waterHeaterImg,
     icon: "🔥"
   },
   {
@@ -69,13 +83,13 @@ export const processSteps = [
 
 // Our Certified Technicians Slideshow
 export const technicianImages = [
-  "/images/tech6.png",
-  "/images/tech7.png",
-  "/images/tech1.jpeg",
-  "/images/tech2.jpeg",
-  "/images/tech3.jpg",
-  "/images/tech4.jpg",
-  "/images/tech5.jpg"
+  tech6Img,
+  tech7Img,
+  tech1Img,
+  tech2Img,
+  tech3Img,
+  tech4Img,
+  tech5Img
 ];
 
 export const testimonial = {
